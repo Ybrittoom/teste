@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEM- Grupo De Estudo Musical</title>
+</head>
+<body>
+    <div id="EscolhaInstrumento" class="EscolhaInstrumento">
+        <h3>Escolha o instrumento</h3>
+        <div id="instrumentosCordasConteiner">
+            <button onclick="violino()">🎻 VIOLINO</button>
+            <button onclick="viola()">🎻 VIOLA</button>
+            <button onclick="cello()">🎻 CELLO</button>
+        </div>
+        <br>
+        <button onclick="">Voltar</button>
+    </div>
+
+    <!--opçao de aluno e professor de violino-->
+    <div id="AlunoProfessorViolino" class="AlunoProfessorViolino" style="display: none;">
+        <button onclick=" irPraAlunoViolino()">Registrar aluno</button>
+        <button onclick="">Registrar Professor</button>
+        <button onclick="voltarPaginaAnterior()">Voltar</button>
+     </div>
+
+     <!--opçao de aluno e professor de viola-->
+     <div id="AlunoProfessorViola" class="AlunoProfessorViola" style="display: none;">
+        <button onclick="">Registrar aluno</button>
+        <button onclick="">Registrar Professor</button>
+        <button onclick="voltarPaginaAnterior()">Voltar</button>
+     </div>
+ 
+     <!--opçao de aluno e professor de cello-->
+     <div id="AlunoProfessorCello" class="AlunoProfessorCello" style="display: none;">
+        <button onclick="">Registrar aluno</button>
+        <button onclick="">Registrar Professor</button>
+        <button onclick=" voltarPaginaAnterior()">Voltar</button>
+     </div>
+<a href="violino/Aluno/Aluno.html"></a>
+     <script src="script.js"></script>
+</body>
+</html>

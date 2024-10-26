@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEM-Professor</title>
+</head>
+<body>
+    <div class="codigo_pessoal" id="codigo_pessoal">
+        <h1>codigo pessoal</h1>
+        <input type="number" name="codigoPessoal" id="codigoPessoal">
+        <button onclick="VerificarCodigo()">Verificar</button>
+        <p id="resposta">...</p>
+    </div>
+
+    <div class="RegistroProfessor" id="RegistroProfessor">
+        <h1>Registro do Professor</h1>
+        <form action="/ViolinoProfessor/registroProfessor" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome"><br>
+
+            <label for="codigo">Codigo</label>
+            <input type="number" name="codigo" id="codigo"><br>
+
+            <label for="TotalAlunos">Total de alunos</label>
+            <input type="number" name="TotalAlunos" id="TotalAlunos"><br>
+
+            <label for="hora_de_chegada">Hora de chegada</label>
+            <input type="time" name="hora_de_chegada" id="hora_de_chegada"><br>
+
+            <label for="hora_de_saida">Hora de saida</label>
+            <input type="time" name="hora_de_saida" id="hora_de_saida"><br>
+
+            <label for="data">Data</label>
+            <input type="date" name="data" id="data"><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
