@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true}))
 //serve os arquivos estaticos (html, css e js)
 app.use(express.static(path.join(__dirname, 'public')))
 
+
 //funçao para salvar os dados em json 
 function salvarDadosEmJson(filePath, newData, res) {
     fs.readFile(filePath,'utf8', (err, data) => { // lendo o arquivo
@@ -27,7 +28,7 @@ function salvarDadosEmJson(filePath, newData, res) {
 
         db.push(newData)
 
-        fs.write(filePath, JSON.stringify(db, null, 2), (err) => { //escrevendo os dados em json
+        fs.writeFile(filePath, JSON.stringify(db, null, 2), (err) => { //escrevendo os dados em json
             if (err) {
                 console.log('Erro ao salvar o arquivo:', err)
                 res.status(500).send('Erro no servidor ')
@@ -54,7 +55,7 @@ app.post('/ViolinoAluno/registroAluno', (req, res) => {
         professor: req.body.professor
     }
 
-    salvarDadosEmJson(path.join(__dirname, 'db/violino/ViolinoAluno.json'), alunoData. res)
+    salvarDadosEmJson(path.join(__dirname, 'db/violino/ViolinoAluno.json'), alunoData, res)
 })
 
 
@@ -62,16 +63,27 @@ app.post('/ViolinoAluno/registroAluno', (req, res) => {
 app.post('/ViolinoProfessor/registroProfessor', (req, res) => {
     const professorData = {
         nome: req.body.nome,
+        codigo: req.body.Codigo,
+        TotalAlunos: req.body.TotalAlunos, // Corrigido para corresponder ao HTML
+        HoraChegada: req.body.hora_de_chegada, // Corrigido para corresponder ao HTML
+        HoraSaida: req.body.hora_de_saida,
+        data: req.body.data
+    }
+
+    salvarDadosEmJson(path.join(__dirname, 'db/violino/ViolinoProfessor.json'), professorData, res)
+})
+
+app.post('/ViolaAluno/registroAluno', (req, res) => {
+    const alunoData = {
+        nome: req.body.nome,
         licoes: req.body.licoes,
-        ToatalLicoes: req.body.ToatalLicoes,
+        TotalLicoes: req.body.TotalLicoes,
         hinos: req.body.hinos,
         TotalHinos: req.body.TotalHinos,
         observacao: req.body.observacao,
-        data: req.body.data,
         professor: req.body.professor
     }
-
-    salvarDadosEmJson(path.join(__dirname, 'db/violino/ViolinoProfessor.json', professorData, res))
+    salvarDadosEmJson(path.join(__dirname, 'db/viola/ViolaAluno.json'), alunoData, res)
 })
 
 

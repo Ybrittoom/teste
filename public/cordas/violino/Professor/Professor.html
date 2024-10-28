@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ProfessorViolino.css">
     <title>GEM-Professor</title>
 </head>
 <body>
-    <div class="codigo_pessoal" id="codigo_pessoal">
+    <div class="divCodigoDeAdesao" id="divCodigoDeAdesao">
         <h1>codigo pessoal</h1>
-        <input type="number" name="codigoPessoal" id="codigoPessoal">
-        <button onclick="VerificarCodigo()">Verificar</button>
+        <button onclick="voltarPaginaAnterior()">voltar</button>
+        <input type="text" name="codigoDeAdesao" id="codigoDeAdesao">
+        <button onclick="verificarCodigoDeFunçao()">Verificar</button>
         <p id="resposta">...</p>
     </div>
 
-    <div class="RegistroProfessor" id="RegistroProfessor">
-        <h1>Registro do Professor</h1>
+    <div class="RegistroProfessor" id="RegistroProfessor" style="display: none;">
+        <h1>Registro do Professor Violino</h1>
         <form action="/ViolinoProfessor/registroProfessor" method="post">
             <label for="nome">Nome</label>
             <input type="text" name="nome" id="nome"><br>
@@ -37,5 +39,7 @@
             <button type="submit">Enviar</button>
         </form>
     </div>
+
+    <script src="ProfessorViolino.js"></script>
 </body>
 </html>
