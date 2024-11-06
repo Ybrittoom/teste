@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="ProfessorViolino.css">
+    <title>GEM-Professor</title>
 </head>
 <body>
-    <h1>prof viola</h1>
+    <div class="divCodigoDeAdesao" id="divCodigoDeAdesao">
+        <h1>codigo pessoal</h1>
+        <button onclick="voltarPaginaAnterior()">voltar</button>
+        <input type="text" name="codigoDeAdesao" id="codigoDeAdesao">
+        <button onclick="verificarCodigoDeFunçao()">Verificar</button>
+        <p id="resposta">...</p>
+    </div>
+
+    <div class="RegistroProfessor" id="RegistroProfessor" style="display: none;">
+        <h1>Registro do Professor Viola</h1>
+        <form action="/ViolaProfessor/registroProfessor'" method="post">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome"><br>
+
+            <label for="codigo">Codigo</label>
+            <input type="number" name="codigo" id="codigo"><br>
+
+            <label for="TotalAlunos">Total de alunos</label>
+            <input type="number" name="TotalAlunos" id="TotalAlunos"><br>
+
+            <label for="hora_de_chegada">Hora de chegada</label>
+            <input type="time" name="hora_de_chegada" id="hora_de_chegada"><br>
+
+            <label for="hora_de_saida">Hora de saida</label>
+            <input type="time" name="hora_de_saida" id="hora_de_saida"><br>
+
+            <label for="data">Data</label>
+            <input type="date" name="data" id="data"><br>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+
+    <script src="ProfessorViola.js"></script>
 </body>
 </html>

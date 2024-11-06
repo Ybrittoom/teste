@@ -73,6 +73,7 @@ app.post('/ViolinoProfessor/registroProfessor', (req, res) => {
     salvarDadosEmJson(path.join(__dirname, 'db/violino/ViolinoProfessor.json'), professorData, res)
 })
 
+//rota para VIOLA ALUNO
 app.post('/ViolaAluno/registroAluno', (req, res) => {
     const alunoData = {
         nome: req.body.nome,
@@ -84,6 +85,19 @@ app.post('/ViolaAluno/registroAluno', (req, res) => {
         professor: req.body.professor
     }
     salvarDadosEmJson(path.join(__dirname, 'db/viola/ViolaAluno.json'), alunoData, res)
+})
+
+// rota para VIOLA PROFESSOR 
+app.post('/ViolaProfessor/registroProfessor', (req, res) => {
+    const professorData = {
+        nome: req.body.nome,
+        codigo: req.body.Codigo,
+        TotalAlunos: req.body.TotalAlunos, // Corrigido para corresponder ao HTML
+        HoraChegada: req.body.hora_de_chegada, // Corrigido para corresponder ao HTML
+        HoraSaida: req.body.hora_de_saida,
+        data: req.body.data
+    }
+    salvarDadosEmJson(path.join(__dirname, 'db/viola/ViolaProfessor.json'), professorData, res)
 })
 
 
