@@ -63,7 +63,7 @@ app.post('/ViolinoAluno/registroAluno', (req, res) => {
 app.post('/ViolinoProfessor/registroProfessor', (req, res) => {
     const professorData = {
         nome: req.body.nome,
-        codigo: req.body.Codigo,
+        codigo: req.body.codigo,
         TotalAlunos: req.body.TotalAlunos, // Corrigido para corresponder ao HTML
         HoraChegada: req.body.hora_de_chegada, // Corrigido para corresponder ao HTML
         HoraSaida: req.body.hora_de_saida,
@@ -89,9 +89,10 @@ app.post('/ViolaAluno/registroAluno', (req, res) => {
 
 // rota para VIOLA PROFESSOR 
 app.post('/ViolaProfessor/registroProfessor', (req, res) => {
+    console.log('Recebido POST em /ViolaProfessor/registroProfessor');
     const professorData = {
         nome: req.body.nome,
-        codigo: req.body.Codigo,
+        codigo: req.body.codigo,
         TotalAlunos: req.body.TotalAlunos, // Corrigido para corresponder ao HTML
         HoraChegada: req.body.hora_de_chegada, // Corrigido para corresponder ao HTML
         HoraSaida: req.body.hora_de_saida,
